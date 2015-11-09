@@ -11,7 +11,7 @@ int main(void){
   for(i=0;i<N;i++){
     x=(((double)(rand()%1000000))/1000000);
     y=(((double)(rand()%1000000))/1000000);
-    if((x*x*y*y)<1.0){
+    if((x*x+y*y)<1.0){
       count++;
     }
   }
