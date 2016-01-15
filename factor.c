@@ -1,34 +1,30 @@
 #include<stdio.h>
+#include<limits.h>
 int main(void){
   unsigned long long int i, A;
   int flag=0;
-  scanf("%lld",&A);
+  scanf("%llu",&A);
 
   /*
   A=13;
-  A_MAX=9223372036854775783;
-  while(A<9223372036854775785){
+  A_MAX=18446744073709551615;
+  
+  while(A<=18446723999999999999){
   flag=0;
   */
 
-  if(A % 2 == 0){ printf("Not Prime.\n"); return 0; }
-  if(A % 3 == 0){ printf("Not Prime.\n"); return 0; }
-  if(A % 5 == 0){ printf("Not Prime.\n"); return 0; }
-  if(A % 7 == 0){ printf("Not Prime.\n"); return 0; }
-  if(A %11 == 0){ printf("Not Prime.\n"); return 0; }
-  //printf("1\n");
-
-  /*
   if(A % 2 == 0) flag++;
   if(A % 3 == 0) flag++;
   if(A % 5 == 0) flag++;
   if(A % 7 == 0) flag++;
   if(A %11 == 0) flag++;
-  */
+  
+  if(A>18446724000000000000){
+    printf("too huge number\n");
+    return 0;
+  }
 
-  //  if(i*i>A) break;
-
-  for(i=13;i*i<A+1&&flag==0;){
+  for(i=13;i*i<A+1&&flag==0&&i<4294964985;){
     if(A%i==0) flag++;
     i+=4;
     if(i*i>A+1) break;
@@ -1048,17 +1044,19 @@ int main(void){
   }
 
   /*
-  if(flag==0) printf("%lld ",A);
+  if(flag==0) printf("%llu ",A);
   A++;
   }
   printf("\n");
   */
 
+  
   if(flag==0){ 
     printf("Prime.\n");
   }else{
     printf("Not Prime.\n");
   }
-
+  
+  
   return 0;
 }
