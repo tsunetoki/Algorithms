@@ -3,6 +3,7 @@
 int main(void){
   unsigned long long int i, A;
   int flag=0;
+  printf("please input under 18446744073709551615 :");
   scanf("%llu",&A);
 
   /*
@@ -18,11 +19,6 @@ int main(void){
   if(A % 5 == 0) flag++;
   if(A % 7 == 0) flag++;
   if(A %11 == 0) flag++;
-  
-  if(A>18446724000000000000){
-    printf("too huge number\n");
-    return 0;
-  }
 
   for(i=13;i*i<A+1&&flag==0&&i<4294964985;){
     if(A%i==0) flag++;
@@ -279,6 +275,10 @@ int main(void){
     if(i*i>A+1) break;
     if(A%i==0) flag++;
     i+=4;
+    if(i==4294967294){
+      flag=-1; 
+      break;
+    }
     if(i*i>A+1) break;
     if(A%i==0) flag++;
     i+=12;
@@ -1053,6 +1053,8 @@ int main(void){
   
   if(flag==0){ 
     printf("Prime.\n");
+  }else if(flag==-1){
+    printf("too huge number.\n");
   }else{
     printf("Not Prime.\n");
   }
