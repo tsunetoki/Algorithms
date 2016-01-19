@@ -9,8 +9,7 @@ int main(void){
   /*
   A=13;
   A_MAX=18446744073709551615;
-  
-  while(A<=18446723999999999999){
+  while(A<=18446744073709551615){
   flag=0;
   */
 
@@ -1050,15 +1049,13 @@ int main(void){
   printf("\n");
   */
 
-  
-  if(flag==0){ 
-    printf("Prime.\n");
-  }else if(flag==-1){
+  if(flag==-1){
     printf("too huge number.\n");
+  }else if(flag==0){ 
+    printf("Prime.\n");
   }else{
     printf("Not Prime.\n");
   }
-  
   
   return 0;
 }
